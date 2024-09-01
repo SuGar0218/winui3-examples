@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "MaterialExample (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "MaterialExample (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

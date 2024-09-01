@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="NavigationViewBindAndNestExample.NavigationPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NavigationViewBindAndNestExample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <NavigationView
+        x:Name="nav1"
+        IsSettingsVisible="False"
+        PaneDisplayMode="Left"
+        MenuItemsSource="{x:Bind ViewModel.Menu1}"
+        SelectionChanged="{x:Bind ViewModel.Navigation1SelectionChanged}">
+        
+        <NavigationView
+            x:Name="nav2"
+            IsSettingsVisible="False"
+            PaneDisplayMode="Left"
+            MenuItemsSource="{x:Bind ViewModel.Menu2, Mode=OneWay}"
+            Header="{x:Bind nav2.SelectedItem, Mode=OneWay}">
+
+            <Frame x:Name="navContainer" />
+
+        </NavigationView>
+    </NavigationView>
+</Page>

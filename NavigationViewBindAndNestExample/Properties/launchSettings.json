@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "NavigationViewBindAndNestExample (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "NavigationViewBindAndNestExample (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
