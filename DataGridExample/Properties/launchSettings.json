@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DataGridExample (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "DataGridExample (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

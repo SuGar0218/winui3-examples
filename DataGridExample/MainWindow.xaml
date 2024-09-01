@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="DataGridExample.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DataGridExample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:community="using:CommunityToolkit.WinUI.UI.Controls"
+    mc:Ignorable="d">
+
+    <Window.SystemBackdrop>
+        <MicaBackdrop />
+    </Window.SystemBackdrop>
+
+    <StackPanel>
+        <Button Click="{x:Bind viewModel.AddOne}">增加</Button>
+        <Button Click="{x:Bind viewModel.RemoveOne}">减少</Button>
+        <community:DataGrid ItemsSource="{x:Bind viewModel.Users}" AutoGenerateColumns="False">
+            <community:DataGrid.Columns>
+                <community:DataGridTextColumn Header="账号" Binding="{Binding Account}" />
+                <community:DataGridTextColumn Header="用户名" Binding="{Binding Username}" />
+                <community:DataGridTextColumn Header="密码" Binding="{Binding Password}" />
+                <community:DataGridCheckBoxColumn Header="已激活" Binding="{Binding IsActivated}" />
+            </community:DataGrid.Columns>
+        </community:DataGrid>
+    </StackPanel>
+
+    <!-- https://learn.microsoft.com/en-us/windows/communitytoolkit/controls/datagrid_guidance/datagrid_basics -->
+</Window>
