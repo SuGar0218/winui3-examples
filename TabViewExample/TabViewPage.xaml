@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="TabViewExample.TabViewPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TabViewExample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <SolidColorBrush x:Key="TabViewItemHeaderBackgroundSelected" Color="{ThemeResource LayerOnMicaBaseAltFillColorDefault}" />
+    </Page.Resources>
+
+    <TabView
+        x:Name="tabView"
+        AddTabButtonClick="{x:Bind AddTabButtonClick}"
+        TabCloseRequested="{x:Bind CloseTabButtonClick}">
+        
+        <TabView.TabStripHeader>
+            <TextBlock
+                VerticalAlignment="Center" HorizontalAlignment="Center"
+                Text="{x:Bind window.AppWindow.Title}" FontWeight="Bold"
+                Margin="16,0" />
+        </TabView.TabStripHeader>
+
+        <!-- 运行时动态增减 TabViewItem -->
+
+        <TabView.TabStripFooter>
+            <Border x:Name="titleBar" MinWidth="{x:Bind window.AppWindow.TitleBar.RightInset}" />
+        </TabView.TabStripFooter>
+    </TabView>
+</Page>

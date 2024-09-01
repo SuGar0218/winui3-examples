@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="NavigationViewExample.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NavigationViewExample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Window.SystemBackdrop>
+        <MicaBackdrop />
+    </Window.SystemBackdrop>
+
+    <NavigationView
+        x:Name="nav"
+        SelectionChanged="{x:Bind NavigationSelectionChanged}"
+        IsSettingsVisible="False"
+        IsBackButtonVisible="Auto"
+        IsBackEnabled="False">
+
+        <NavigationView.PaneHeader>
+            <StackPanel>
+                <TextBlock FontWeight="Bold">欢迎使用</TextBlock>
+                <TextBlock>{x:Bind Username}</TextBlock>
+            </StackPanel>
+        </NavigationView.PaneHeader>
+        
+        <NavigationView.MenuItems>
+            <NavigationViewItemHeader>会保留更改</NavigationViewItemHeader>
+            <x:String>Page 1</x:String>
+            <x:String>Page 2</x:String>
+
+            <NavigationViewItemHeader>将刷新页面</NavigationViewItemHeader>
+            <x:String>Navigate Page 1</x:String>
+            <x:String>Navigate Page 2</x:String>
+        </NavigationView.MenuItems>
+
+        <NavigationView.FooterMenuItems>
+            <NavigationViewItemHeader>FooterMenuItems</NavigationViewItemHeader>
+            <x:String>FooterMenuItem 1</x:String>
+            <x:String>FooterMenuItem 2</x:String>
+        </NavigationView.FooterMenuItems>
+
+        <NavigationView.PaneFooter>
+            <StackPanel>
+                <TextBlock FontWeight="Bold">Copyright</TextBlock>
+                <TextBlock FontWeight="Bold">版权方</TextBlock>
+            </StackPanel>
+        </NavigationView.PaneFooter>
+        
+        <Frame x:Name="navContainer" />
+    </NavigationView>
+</Window>

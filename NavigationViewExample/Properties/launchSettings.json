@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "NavigationViewExample (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "NavigationViewExample (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
