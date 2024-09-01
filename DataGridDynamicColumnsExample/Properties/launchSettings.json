@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DataGridDynamicColumnsExample (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "DataGridDynamicColumnsExample (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
